@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script>
+        function RndInt(min,max){
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+        function generateRandInt() {
+    var randomNumber = RndInt(100, 1000);
+
+    document.getElementById('prod').innerHTML = 'Randomly generated number: ' + randomNumber;
+
+    var ones = randomNumber % 10;
+    var tens = Math.floor((randomNumber / 10) % 10);
+    var hundreds = Math.floor(randomNumber / 100);
+
+    document.getElementById('breakdown').innerHTML = 'Breakdown: [' + hundreds + '], [' + tens + '], [' + ones + ']';
+}
+
+    </script>
+</head>
+<body>
+    <button onclick="generateRandInt()">Random Number</button>
+    <p id="prod"></p>
+    <p id="breakdown"></p>
+</body>
+</html>
